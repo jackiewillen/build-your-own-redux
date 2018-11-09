@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 备忘录中记录内容的初始状态
+        let initialState = {
+            nextNoteId: 1,
+            notes: {}
+        }
+    </script>
+    <script src="./reducer.js"></script>
+    <script>
+        // 添加一条备忘录
+        let create_action = {
+            type: CREATE_NOTE,
+            content: '明天下午要开会'
+        };
+        let newState = reducer(initialState, create_action);
+        console.log('newState====>' + JSON.stringify(newState)); 
+
+        // 更新一条备忘录
+        let update_action = {
+            type: UPDATE_NOTE,
+            id: 1,
+            content: '好像记错了，是明天上午要开会'
+        };
+        let updateState = reducer(newState, update_action);
+        console.log('updateState====>' + JSON.stringify(updateState));
+
+        // 一系列组合操作的测试
+        let actionList = [
+            {type: CREATE_NOTE, content: '明天下午要开会'},
+            {type: UPDATE_NOTE, id: 1, content: '好像记错了，是明天上午要开会'},
+        ];
+        // 为什么叫reducer，原因就在这，应为就像array中的reduce一样，可以累积
+        let result = actionList.reduce(reducer, initialState);
+        console.log(result);
+    </script>
+    
+</body>
+</html>
