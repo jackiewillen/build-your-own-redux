@@ -14,6 +14,7 @@ Todo（自己实现一个redux，并且用这个redux完成一个备忘本）
 
 
 参考文章：
+
 https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6（a cartoon intro to redux）
 
 https://zapier.com/engineering/how-to-build-redux/#routing(build yourself a redux)
