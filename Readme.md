@@ -1,8 +1,8 @@
 Todo（自己实现一个redux，并且用这个redux完成一个备忘本）
 
-1.redux中reducer的实现。
-2.redux中action的实现。
-3.redux中store的实现。
+1.redux中reducer的实现。done
+2.redux中action的实现。done
+3.redux中store的实现。done
 4.结合自己实现的redux实现一个备忘本。
 5.redux中的connect的实现。(结合react中的context实现)
 6.结合connect react把备忘本再实现一遍

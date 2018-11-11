@@ -17,25 +17,40 @@
         }
     </script>
     <script src="./actions.js"></script>
+    <script src="./store.js"></script>
     <script src="./reducer.js"></script>
     <script>
-        // 添加一条备忘录,这里的reducer相当于就是dispatcher
-        // index.html(view)--->reducer(dispatch)---->create_action(action)---->changeInitialState
-        let newState = reducer(initialState, create_action);
-        console.log('newState====>' + JSON.stringify(newState));
+        // =====测试：模拟用户1的备忘录=====
+        const store1 = createStore(reducer);
+        let msgSubscriber1 = store1.subscribe(() => {
+            console.log('亲爱的用户1，你的备忘录更新啦！');
+        });
+
+        store1.dispatch(create_action);
+        console.log('newState====>' + JSON.stringify(store1.getState()));
 
         // 更新一条备忘录,这里的reducer相当于就是dispatcher
         // index.html(view)--->reducer(dispatch)---->update_action(action)---->changeState
-        let updateState = reducer(newState, update_action);
-        console.log('updateState====>' + JSON.stringify(updateState));
-
-        // 一系列组合操作的测试
-        let actionList = [create_action, update_action];
-        // 为什么叫reducer，原因就在这，因为就像array中的reduce一样，可以累积
-        let result = actionList.reduce(reducer, initialState);
-        console.log(result);
+        store1.dispatch(update_action);
+        console.log('updateState====>' + JSON.stringify(store1.getState()));
     </script>
+    <script>
+        // =====测试：模拟用户2的备忘录=====
+        const store2 = createStore(reducer);
+        let msgSubscriber2 = store2.subscribe(() => {
+            console.log('亲爱的用户2，你的备忘录更新啦！');
+        });
 
+        store2.dispatch(create_action);
+        console.log('newState====>' + JSON.stringify(store2.getState()));
+
+        // 更新一条备忘录,这里的reducer相当于就是dispatcher
+        // index.html(view)--->reducer(dispatch)---->update_action(action)---->changeState
+        store2.dispatch(update_action);
+        console.log('updateState====>' + JSON.stringify(store2.getState()));
+        store2.dispatch(update_action);
+        console.log('updateState====>' + JSON.stringify(store2.getState()));
+    </script>
 </body>
 
 </html>

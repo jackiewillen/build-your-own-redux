@@ -1,7 +1,12 @@
 // 原子操作
+const INIT_NOTE = "INIT_NOTE";
 const CREATE_NOTE = "CREATE_NOTE";
 const UPDATE_NOTE = "UPDATE_NOTE";
 
+// 初始化一个备忘录
+const init_action = {
+    type: INIT_NOTE
+};
 // 添加一条备忘录
 const create_action = {
     type: CREATE_NOTE,

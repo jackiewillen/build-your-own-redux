@@ -31,6 +31,13 @@ const reducer = (state = initialState, action) => {
                     }
                 };
             }
+        case INIT_NOTE:
+            {
+                return {
+                    nextNoteId: 1,
+                    notes: {}
+                }
+            }
         default:
             return state;
     }
