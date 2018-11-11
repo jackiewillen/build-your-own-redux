@@ -7,7 +7,7 @@
 // (1)首先来实现reducer，相当于dispatch的雏形
 // 目标： state ---->reducer -----> newState
 // 对于备忘录可能出现的action的集合
-var reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
     switch (action.type) {
         case CREATE_NOTE:
             {

@@ -19,17 +19,19 @@
     <script src="./actions.js"></script>
     <script src="./reducer.js"></script>
     <script>
-        // 添加一条备忘录
+        // 添加一条备忘录,这里的reducer相当于就是dispatcher
+        // index.html(view)--->reducer(dispatch)---->create_action(action)---->changeInitialState
         let newState = reducer(initialState, create_action);
         console.log('newState====>' + JSON.stringify(newState));
 
-        // 更新一条备忘录
+        // 更新一条备忘录,这里的reducer相当于就是dispatcher
+        // index.html(view)--->reducer(dispatch)---->update_action(action)---->changeState
         let updateState = reducer(newState, update_action);
         console.log('updateState====>' + JSON.stringify(updateState));
 
         // 一系列组合操作的测试
         let actionList = [create_action, update_action];
-        // 为什么叫reducer，原因就在这，应为就像array中的reduce一样，可以累积
+        // 为什么叫reducer，原因就在这，因为就像array中的reduce一样，可以累积
         let result = actionList.reduce(reducer, initialState);
         console.log(result);
     </script>
