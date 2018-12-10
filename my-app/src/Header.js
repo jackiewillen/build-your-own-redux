@@ -4,7 +4,7 @@ import Title from './Title';
 class Header extends Component {
     render() {
         return (
-            <Title color={this.props.color}></Title>
+            <Title></Title>
         )
     }
 }

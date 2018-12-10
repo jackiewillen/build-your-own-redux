@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import ChildContent from './ChildContent';
+import PropTypes from 'prop-types';
 
 class Content extends Component {
+  static contextTypes = {
+    color: PropTypes.string
+  }
   render() {
     return (
       <div>
           <span 
-            color={this.props.color} 
-            style={{color: this.props.color}}>
+            style={{color: this.context.color}}>
               主内容区域
           </span>
           <br/>
-          <ChildContent 
-            switchColor={this.props.switchColor}
-            color={this.props.color} 
-            ></ChildContent>
+          <ChildContent></ChildContent>
       </div>
     );
   }

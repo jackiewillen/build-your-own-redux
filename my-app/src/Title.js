@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Title extends Component {
+    static contextTypes = {
+        color: PropTypes.string
+    }
     render() {
         return (
-            <div style={{color: this.props.color}}>我是文章的标题</div>
+            <div style={{color: this.context.color}}>我是文章的标题</div>
         );
     }
 }

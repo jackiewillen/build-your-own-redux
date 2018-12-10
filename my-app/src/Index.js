@@ -2,15 +2,24 @@ import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import Header from './Header';
 import Content from './Content';
+import PropTypes from 'prop-types';
 
 class Index extends Component {
     constructor() {
         super();
-        this.state = {
-            color: 'red',
+        this.state = {color: 'red'};
+    }
+    static childContextTypes = { // 定义父子组件共享的变量
+        color: PropTypes.string,
+        changeTheme: PropTypes.func,
+    }
+    getChildContext () {
+        return {
+          color: this.state.color,
+          changeTheme: this.changeTheme,
         }
     }
-    switchColor(color) {
+    changeTheme = (color) => {
         this.setState({
             color
         });
@@ -18,13 +27,8 @@ class Index extends Component {
     render () {
         return (
             <div>
-                <Header 
-                    color={this.state.color}>
-                </Header>
-                <Content 
-                    color={this.state.color}
-                    switchColor= {this.switchColor.bind(this)}>
-                </Content>
+                <Header></Header>
+                <Content></Content>
             </div>
         );
     }
