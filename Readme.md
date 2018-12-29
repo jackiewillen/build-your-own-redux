@@ -6,7 +6,7 @@ Todo（自己实现一个redux，并且用这个redux完成一个备忘本）
 3.5 先不使用redux，直接用react实现一个主题定制页面的开发。 
     3.5.1 使用props传参完成父子组件共享同一个全局变量（演示全局变量的原始层层传递共享数据）done
     3.5.2 使用react提供的Context上下文完成父子组件全局变量的共享(演示全局变量使用react context 跨越组件共享数据)  done
-4.结合自己实现的redux实现一个主题定制页面的开发。
+4.结合自己实现的redux实现一个主题定制页面的开发。 done
 5.redux中的connect的实现。(结合react中的context实现)
 6.结合connect react把备忘本再实现一遍
 7.redux中添加mapStateToProps

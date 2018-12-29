@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 class Title extends Component {
     static contextTypes = {
-        color: PropTypes.string
+        store: PropTypes.object
     }
     render() {
         return (
-            <div style={{color: this.context.color}}>我是文章的标题</div>
+            <div style={{color: this.context.store.getState().color}}>我是文章的标题</div>
         );
     }
 }

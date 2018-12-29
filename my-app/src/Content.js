@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 
 class Content extends Component {
   static contextTypes = {
-    color: PropTypes.string
+    store: PropTypes.object
   }
   render() {
     return (
       <div>
           <span 
-            style={{color: this.context.color}}>
+            style={{color: this.context.store.getState().color}}>
               主内容区域
           </span>
           <br/>
