@@ -10,9 +10,9 @@ Todo（自己实现一个redux，并且用这个redux完成一个备忘本）
 5.redux中的connect的实现。(结合react中的context实现) done
 6.结合connect react把主题定制页面再实现一遍 done
 7.redux中添加mapStateToProps done
-8.redux中添加mapDispatchToProps。 doing
-9.结合mapStateToProps，mapDispatchToProps 重构备忘本代码
-10.redux中的provider的实现。
+8.redux中添加mapDispatchToProps。 done
+9.结合mapStateToProps，mapDispatchToProps 主题定制页面 done
+10.redux中的provider的实现
 11.使用provider重构代码。
 
 
