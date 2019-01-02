@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {UPDATE_THEME} from './redux/actions';
+import {connect} from './redux/connect';
 
 class ThemeSwitch extends Component {
-    static contextTypes = {
+    static propTypes = {
         store: PropTypes.object,
-    }
-    componentWillMount() {
-        this.store = this.context.store;
     }
     render() {
         return (
             <div>
                 <button 
-                    style={{color: this.store.getState().color}} 
-                    onClick={() => {this.store.dispatch({type: UPDATE_THEME, color: 'red'})}}>
+                    style={{color: this.props.store.getState().color}} 
+                    onClick={() => {this.props.store.dispatch({type: UPDATE_THEME, color: 'red'})}}>
                         红色主题
                 </button>
                 <button
-                    style={{color: this.store.getState().color}} 
-                    onClick={() => {this.store.dispatch({type: UPDATE_THEME, color: 'blue'})}}>
+                    style={{color: this.props.store.getState().color}} 
+                    onClick={() => {this.props.store.dispatch({type: UPDATE_THEME, color: 'blue'})}}>
                         蓝色主题
                 </button>
             </div>
@@ -27,4 +25,6 @@ class ThemeSwitch extends Component {
     }
 }
 
-export default ThemeSwitch;
+let ThemeSwitchComp = connect(ThemeSwitch);
+
+export default ThemeSwitchComp;

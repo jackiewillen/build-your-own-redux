@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import ChildContent from './ChildContent';
 import PropTypes from 'prop-types';
+import {connect} from './redux/connect';
 
 class Content extends Component {
-  static contextTypes = {
+  static propTypes = {
     store: PropTypes.object
   }
   render() {
     return (
       <div>
           <span 
-            style={{color: this.context.store.getState().color}}>
+            style={{color: this.props.store.getState().color}}>
               主内容区域
           </span>
           <br/>
@@ -20,4 +21,5 @@ class Content extends Component {
   }
 }
 
-export default Content;
+let ContentComp = connect(Content);
+export default ContentComp;
