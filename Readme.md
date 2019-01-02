@@ -12,8 +12,9 @@ Todo（自己实现一个redux，并且用这个redux完成一个备忘本）
 7.redux中添加mapStateToProps done
 8.redux中添加mapDispatchToProps。 done
 9.结合mapStateToProps，mapDispatchToProps 主题定制页面 done
-10.redux中的provider的实现
-11.使用provider重构代码。
+10.redux中的provider的实现 done
+11.使用provider重构代码。done
+12.代码整理，provider中页面刷新相关的移动到connect,语法检查，错误检查，合并commit.
 
 
 参考文章：
