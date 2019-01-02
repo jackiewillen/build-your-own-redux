@@ -11,7 +11,7 @@ class Content extends Component {
     return (
       <div>
           <span 
-            style={{color: this.props.store.getState().color}}>
+            style={{color: this.props.themeColor}}>
               主内容区域
           </span>
           <br/>
@@ -20,6 +20,11 @@ class Content extends Component {
     );
   }
 }
+let mapStateToProps = (state) => {
+  return {
+      themeColor: state.color,
+  }
+}
 
-let ContentComp = connect(Content);
+let ContentComp = connect(mapStateToProps)(Content);
 export default ContentComp;

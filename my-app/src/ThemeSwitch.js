@@ -11,12 +11,12 @@ class ThemeSwitch extends Component {
         return (
             <div>
                 <button 
-                    style={{color: this.props.store.getState().color}} 
+                    style={{color: this.props.themeColor}} 
                     onClick={() => {this.props.store.dispatch({type: UPDATE_THEME, color: 'red'})}}>
                         红色主题
                 </button>
                 <button
-                    style={{color: this.props.store.getState().color}} 
+                    style={{color: this.props.themeColor}} 
                     onClick={() => {this.props.store.dispatch({type: UPDATE_THEME, color: 'blue'})}}>
                         蓝色主题
                 </button>
@@ -24,7 +24,11 @@ class ThemeSwitch extends Component {
         );
     }
 }
-
-let ThemeSwitchComp = connect(ThemeSwitch);
+let mapStateToProps = (state) => {
+    return {
+        themeColor: state.color,
+    }
+}
+let ThemeSwitchComp = connect(mapStateToProps)(ThemeSwitch);
 
 export default ThemeSwitchComp;

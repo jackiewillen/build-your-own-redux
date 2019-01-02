@@ -8,10 +8,15 @@ class Title extends Component {
     }
     render() {
         return (
-            <div style={{color: this.props.store.getState().color}}>我是文章的标题</div>
+            <div style={{color: this.props.themeColor}}>我是文章的标题</div>
         );
     }
 }
-let TitleComp = connect(Title);
+let mapStateToProps = (state) => {
+    return {
+        themeColor: state.color,
+    }
+}
+let TitleComp = connect(mapStateToProps)(Title);
 
 export default TitleComp;
