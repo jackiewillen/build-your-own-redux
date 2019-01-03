@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {UPDATE_THEME} from './redux/actions';
-import {connect} from './redux/connect';
+import {connect} from 'react-redux';
+
 
 class ThemeSwitch extends Component {
     static propTypes = {

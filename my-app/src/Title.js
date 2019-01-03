@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {connect} from './redux/connect';
+import {connect} from 'react-redux';
 
 class Title extends Component {
     static propTypes = {

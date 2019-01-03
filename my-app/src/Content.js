@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ChildContent from './ChildContent';
 import PropTypes from 'prop-types';
-import {connect} from './redux/connect';
+import {connect} from 'react-redux';
 
 class Content extends Component {
   static propTypes = {
