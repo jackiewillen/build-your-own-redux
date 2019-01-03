@@ -6,11 +6,23 @@ let connect = (mapStateToProps = () => {}, mapDispatchToProps = () => {}) => (Wr
         static contextTypes = {
             store: PropTypes.object,
         }
-        render() {
+        constructor() {
+            super();
+            this.state = {};
+        }
+        componentWillMount() {
+            this.updateComponent();
+            this.context.store.subscribe(() => this.updateComponent());
+        }
+        updateComponent() {
             let store = this.context.store;
             let stateProps = mapStateToProps(store.getState());
-            let dispatchProps = mapDispatchToProps(store.dispatch)
-            return <WrappedComponent {...stateProps} {...dispatchProps}/>   
+            let dispatchProps = mapDispatchToProps(store.dispatch);
+            // 每次store数据更新后重新渲染一下页面
+            this.setState({allProps: {...stateProps, ...dispatchProps}});
+        }
+        render() {
+            return <WrappedComponent {...this.state.allProps} />   
         }
     }
     return connect;
